@@ -154,7 +154,7 @@ def turns(showboard, databoard, counter, wincounter):    #, ship1, ship2, ship3,
 
 
 
-#______________________________________________
+#________Tentative Algorithm__For Reg____________________
 
 #Main
     #Create 5x5 board
@@ -181,5 +181,14 @@ def turns(showboard, databoard, counter, wincounter):    #, ship1, ship2, ship3,
         #if miss, replace with O
             #turns remaining goes down by one
             #is turns remaining == 0, user loses
+
+#__________TENTATIVE FOR TWO PLAYER_______
+
+#PLayer 1 chooses their ship locations
+#Player 2 chooses their ship locations
+
+
+
+
 
 main()

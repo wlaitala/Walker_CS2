@@ -26,32 +26,33 @@ def main():
 
 def moves(board):                                           #defines the moves function
     
-    def xcorrect():                                         #function to verify if input is valid
-        x_input = input("Player X input(row,column): ")     #string, "2,2", where the user wants to put their guy
+    while True:
+        x_input = input("Player X input (row,column): ")     #string, "2,2", where the user wants to put their guy
         if len(x_input) != 3:                               #if it has more than 3 characters, it is invalid
             print("invalid input, try again")
-            xcorrect()
+            continue
         elif " " in x_input:                                #If there is a " ", invalid
             print("invalid input, try again")
-            xcorrect()
+            continue
         elif x_input[1] != ",":                             #If the second character is not a , it is invalid
             print("invalid input, try again")
-            xcorrect()
+            continue
         elif int(x_input[0]) - 1 not in range(0,3):         #if the first character is not 0 1 or 2 then invalid
             print("invalid input, try again")
-            xcorrect()
+            continue
         elif int(x_input[2]) - 1 not in range(0,3):         #if the second character is not 0 1 or 2 then it is invalid
             print("invalid input, try again")
-            xcorrect()
+            continue
         rowinput = int(x_input.split(',')[0]) - 1           #rowinput = integer, 2, is the first number the user inputs
         colinput = int(x_input.split(',')[1]) - 1           #colinput = integer, 3, is the second number the user inputs
         if board[rowinput][colinput] != "-":                #if the space is open the it will put a character there
             print("this spot has been taken, try again")
-            xcorrect()
-        return(x_input)
-    xreturn = xcorrect()                                    #run the function
+            continue
+        break
     
-    board[int(xreturn.split(",")[0]) - 1][int(xreturn.split(",")[1]) - 1] = "X"
+    
+  
+    board[int(x_input.split(",")[0]) - 1][int(x_input.split(",")[1]) - 1] = "X"
     for row in range(3):                                    #a for loop to print the board that goes through every space in the board and prints it
         col = 0                                             #set col as 0 as a baseline
         for col in range(3):                                #nested for loop to handle the column
@@ -67,30 +68,31 @@ def moves(board):                                           #defines the moves f
         print("it's a tie!")                                #so say it's a tie
         exit()                                              #exit program
 
-    def ocorrect():                                         #function to verify if input is valid
-        o_input = input("Player O input(row,column): ")     #string, "2,2", where the user wants to put their guy
+    while True:
+        o_input = input("Player O input (row,column): ")     #string, "2,2", where the user wants to put their guy
         if len(o_input) != 3:                               #if it has more than 3 characters, it is invalid
             print("invalid input, try again")
-            ocorrect()
+            continue
+        elif " " in o_input:                                #If there is a " ", invalid
+            print("invalid input, try again")
+            continue
         elif o_input[1] != ",":                             #If the second character is not a , it is invalid
             print("invalid input, try again")
-            ocorrect()
+            continue
         elif int(o_input[0]) - 1 not in range(0,3):         #if the first character is not 0 1 or 2 then invalid
             print("invalid input, try again")
-            ocorrect()
-        elif int(o_input[2]) - 1 not in range(0,3):         #if the second character is not 0 1 or 2 then it is invalid
+            continue
+        elif int(x_input[2]) - 1 not in range(0,3):         #if the second character is not 0 1 or 2 then it is invalid
             print("invalid input, try again")
-            ocorrect()
+            continue
         rowinput = int(o_input.split(',')[0]) - 1           #rowinput = integer, 2, is the first number the user inputs
-        colinput = int(o_input.split(',')[1]) - 1           #colinput = integer, 3, is the second number the user inputs
+        colinput = int(x_input.split(',')[1]) - 1           #colinput = integer, 3, is the second number the user inputs
         if board[rowinput][colinput] != "-":                #if the space is open the it will put a character there
-            print("invalid input, try again")
-            ocorrect()
-        return(o_input)                                     #return the coordinated because they are good to go
-        
-    oreturn = ocorrect()                                    #run the function
+            print("this spot has been taken, try again")
+            continue
+        break
     
-    board[int(oreturn.split(",")[0]) - 1][int(oreturn.split(",")[1]) - 1] = "O"         #set the coordinates to be their character
+    board[int(o_input.split(",")[0]) - 1][int(o_input.split(",")[1]) - 1] = "O"         #set the coordinates to be their character
 
     for row in range(3):                                    #a for loop to print the board that goes through every space in the board and prints it
         col = 0                                             #set col as 0 as a baseline
