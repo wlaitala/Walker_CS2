@@ -25,7 +25,6 @@ def main():
     moves(board)                                            #run the moves function
 
 def moves(board):                                           #defines the moves function
-    
     while True:
         x_input = input("Player X input (row,column): ")     #string, "2,2", where the user wants to put their guy
         if len(x_input) != 3:                               #if it has more than 3 characters, it is invalid
@@ -49,8 +48,6 @@ def moves(board):                                           #defines the moves f
             print("this spot has been taken, try again")
             continue
         break
-    
-    
   
     board[int(x_input.split(",")[0]) - 1][int(x_input.split(",")[1]) - 1] = "X"
     for row in range(3):                                    #a for loop to print the board that goes through every space in the board and prints it
