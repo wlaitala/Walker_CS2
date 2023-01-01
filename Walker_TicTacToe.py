@@ -26,7 +26,7 @@ def main():
 
 def moves(board):                                           #defines the moves function
     while True:
-        x_input = input("Player X input (row,column): ")     #string, "2,2", where the user wants to put their guy
+        x_input = input("Player X input (row,column): ")    #string, "2,2", where the user wants to put their guy
         if len(x_input) != 3:                               #if it has more than 3 characters, it is invalid
             print("invalid input, try again")
             continue
@@ -79,7 +79,7 @@ def moves(board):                                           #defines the moves f
         elif int(o_input[0]) - 1 not in range(0,3):         #if the first character is not 0 1 or 2 then invalid
             print("invalid input, try again")
             continue
-        elif int(x_input[2]) - 1 not in range(0,3):         #if the second character is not 0 1 or 2 then it is invalid
+        elif int(o_input[2]) - 1 not in range(0,3):         #if the second character is not 0 1 or 2 then it is invalid
             print("invalid input, try again")
             continue
         rowinput = int(o_input.split(',')[0]) - 1           #rowinput = integer, 2, is the first number the user inputs
