@@ -63,11 +63,7 @@ def oneplayer():
 
     print("Here is what your board looks like: ")               #Showing the user the empty board
 
-    for row in range(0,5):                                      #Print out the board
-        col = 0
-        for col in range(0,5):
-            print(showboard[row][col], end = " ")   #CHANGE TO SHOWBOARD FOR FINAL SUBMISSION
-        print(" ")
+    printboard(showboard)                                       #Send to print board function
 
     turns(showboard, databoard, counter, wincounter)            #Must import both boards and both counters
 
@@ -125,11 +121,7 @@ def turns(showboard, databoard, counter, wincounter):           #Function for wh
     if databoard[row_coord][col_coord] == "🚢":                 #If the sapce that they guessed contains a ship (meaning it is a hit)
         print("here is your board:")
         showboard[int(row_coord)][int(col_coord)] = "🚢"        #Show them the board
-        for row in range(0,5):                                  #Double for loop to show user the board VVV
-            col = 0
-            for col in range(0,5):
-                print(showboard[row][col], end = " ")
-            print(" ")
+        printboard(showboard)                                   #Send to print board function
         counter = counter - 1                                   #Number of turns remaining goes down by 1
         print("hit!\nyou have " + str(counter) + " moves left") #Tells user that their guess was a hit and how many turn they have left
         winsound.PlaySound(r'C:\Users\wlaitala25\Documents\GitHub\Battleship\Explosion_sound.wav', winsound.SND_FILENAME)       #Playing "BOOM" Sound
@@ -140,33 +132,21 @@ def turns(showboard, databoard, counter, wincounter):           #Function for wh
             exit()                                              #Stop ther program
         elif counter == 0:                                      #If they have run out of turns and haven't won yet
             print("You Lose\nhere is where your ships were:")   #Tell them that they have lost
-            for row in range(0,5):                              #Print out the board to show them where the ships were
-                col = 0
-                for col in range(0,5):
-                    print(databoard[row][col], end = " ")
-                print(" ")
+            printboard(databoard)                               #Send to print board function
             exit()                                              #Stop the program
         else:                                                   #If they still have any moves remaining AND there are still ships left (neither win nor loss)
             turns(showboard,databoard, counter, wincounter)     #Run it back
     else:                                                       #If the space of their guess is not a ship (meaning they have missed)
         print("here is your board:") 
         showboard[int(row_coord)][int(col_coord)] = "🌊"        #Replace their guess with a water emoji to signify that they missed on that spot
-        for row in range(0,5):                                  #Double for loop to prtin the board  VVV
-            col = 0
-            for col in range(0,5):
-                print(showboard[row][col], end = " ")
-            print(" ")
+        printboard(showboard)                                   #Send to print board function
         counter = counter - 1                                   #counter goes down by 1 because they have one fewer turn left
         print("miss!\nyou have " + str(counter) + " moves left")#Tell them that they have missed and how many moves they have left
         winsound.PlaySound(r'C:\Users\wlaitala25\Documents\GitHub\Battleship\Splash_sound.wav', winsound.SND_FILENAME)  #Play the "SPLASH" sound effect
         print("there are " + str(wincounter) + " ships remaining")  #Tell them how many ships there are remaining
         if counter == 0:                                        #If counter is 0 (meaning they have run out of turns)
             print("You Lose\nhere is where your ships were:")   #They have lost
-            for row in range(0,5):                              #Print out the board to show them where the ships were
-                col = 0
-                for col in range(0,5):
-                    print(databoard[row][col], end = " ")
-                print(" ")
+            printboard(databoard)                               #Send to print board function
             exit()                                              #Stop the program
         else:                                                   #Otherwise
             turns(showboard,databoard, counter, wincounter)     #Run it back
@@ -249,11 +229,7 @@ def turns2(databoard1, databoard2, showboard1, showboard2, wincounter1, wincount
 
     print("Here is what your guessboard looks like: ")          #Showing the user the empty board
 
-    for row in range(0,5):                                      #Print out the board    VVV
-        col = 0
-        for col in range(0,5):
-            print(showboard1[row][col], end = " ") 
-        print(" ")
+    printboard(showboard1)                                      #Send to print board function
 
     while True:                                                 #function to verify if input is valid
         coordinates = input("What space would you like to guess? (row, column; ex. (5,1)")     #string, "2,2", where the user wants to put their guy
@@ -285,11 +261,7 @@ def turns2(databoard1, databoard2, showboard1, showboard2, wincounter1, wincount
     if databoard2[row_coord][col_coord] == "🚢":                #If the sapce that they guessed contains a ship (meaning it is a hit)
         print("here is your guessboard:")
         showboard1[int(row_coord)][int(col_coord)] = "🚢"       #Show them the board
-        for row in range(0,5):                                  #Double for loop to show user the board VVV
-            col = 0
-            for col in range(0,5):
-                print(showboard1[row][col], end = " ")
-            print(" ")
+        printboard(showboard1)                                  #Send to print board function
         winsound.PlaySound(r'C:\Users\wlaitala25\Documents\GitHub\Battleship\Explosion_sound.wav', winsound.SND_FILENAME)       #Playing "BOOM" Sound
         wincounter1 -= 1                                         #wincounter goes down by one because there is one fewer ship remaining
         if wincounter1 == 0:                                     #If there are no ships remaining
@@ -301,22 +273,14 @@ def turns2(databoard1, databoard2, showboard1, showboard2, wincounter1, wincount
         winsound.PlaySound(r'C:\Users\wlaitala25\Documents\GitHub\Battleship\Splash_sound.wav', winsound.SND_FILENAME)  #Play the "SPLASH" sound effect
     
     print("here is your updated board: ")
-    for row in range(0,5):                                  #Double for loop to show user the board VVV
-            col = 0
-            for col in range(0,5):
-                print(showboard1[row][col], end = " ")
-            print(" ")
+    printboard(showboard1)                                       #Send to print board function
     print("there are " + str(wincounter1) + " ships remaining\n")  #Tell them how many ships there are remaining
 
     print("PLAYER 2'S TURN")
 
     print("Here is what your guessboard looks like: ")          #Showing the user the empty board
 
-    for row in range(0,5):                                      #Print out the board    VVV
-        col = 0
-        for col in range(0,5):
-            print(showboard2[row][col], end = " ") 
-        print(" ")
+    printboard(showboard2)                                       #Send to print board function
 
     while True:                                                 #function to verify if input is valid
         coordinates = input("What space would you like to guess? (row, column; ex. (5,1)")     #string, "2,2", where the user wants to put their guy
@@ -345,35 +309,44 @@ def turns2(databoard1, databoard2, showboard1, showboard2, wincounter1, wincount
     row_coord = int(coordinates.split(",")[0]) - 1              #convert user's input into coordinates
     col_coord = int(coordinates.split(",")[1]) - 1              #convert user's input into coordinates
 
-    if databoard1[row_coord][col_coord] == "🚢":                 #If the sapce that they guessed contains a ship (meaning it is a hit)
+    if databoard1[row_coord][col_coord] == "🚢":               #If the sapce that they guessed contains a ship (meaning it is a hit)
         print("here is your guessboard:")
-        showboard2[int(row_coord)][int(col_coord)] = "🚢"        #Show them the board
-        for row in range(0,5):                                  #Double for loop to show user the board VVV
-            col = 0
-            for col in range(0,5):
-                print(showboard2[row][col], end = " ")
-            print(" ")
+        showboard2[int(row_coord)][int(col_coord)] = "🚢"      #Show them the board
+        printboard(showboard2)                                  #Send to print board function
         winsound.PlaySound(r'C:\Users\wlaitala25\Documents\GitHub\Battleship\Explosion_sound.wav', winsound.SND_FILENAME)       #Playing "BOOM" Sound
-        wincounter2 -= 1                                         #wincounter goes down by one because there is one fewer ship remaining
-        if wincounter2 == 0:                                     #If there are no ships remaining
+        wincounter2 -= 1                                        #wincounter goes down by one because there is one fewer ship remaining
+        if wincounter2 == 0:                                    #If there are no ships remaining
             print("You win!")                                   #Tell them they've won
             exit()                                              #Stop ther program
     else:
         print("miss!")
-        showboard2[int(row_coord)][int(col_coord)] = "🌊"        #Replace their guess with a water emoji to signify that they missed on that spot
+        showboard2[int(row_coord)][int(col_coord)] = "🌊"       #Replace their guess with a water emoji to signify that they missed on that spot
         winsound.PlaySound(r'C:\Users\wlaitala25\Documents\GitHub\Battleship\Splash_sound.wav', winsound.SND_FILENAME)  #Play the "SPLASH" sound effect
         
     print("here is your updated board: ")
-    for row in range(0,5):                                  #Double for loop to show user the board VVV
-            col = 0
-            for col in range(0,5):
-                print(showboard2[row][col], end = " ")
-            print(" ")
-    print("there are " + str(wincounter1) + " ships remaining\n")  #Tell them how many ships there are remaining
+    printboard(showboard2)                                       #Send to print board function
+    print("there are " + str(wincounter1) + " ships remaining\n")#Tell them how many ships there are remaining
 
     turns2(databoard1, databoard2, showboard1, showboard2, wincounter1, wincounter2)
 
-main()    
+def printboard(board):
+    '''
+    Simple algorithm to print board
+    '''
+
+    for row in range(0,5):                                                      #Test every row,
+        col = 0                                                                 #While the column is 0
+        for col in range(0,5):                                                  #Test every column
+            if col != 4:                                                        #ONLY if it is not the last column
+                if board[row][col + 1] == "🌊" or board[row][col + 1] == "🚢": #If the NEXT character in the sequence is an emoji,
+                    print(board[row][col], end = ' ')                           #Print one less space after this character
+                else:                                                           #If the nect character isn't an emoji,
+                    print(board[row][col], end = '  ')                          #Print the regular amount of spaces
+            else:                                                               #If it is printing from the very last column, obviously the nect character can't be an emoji
+                print(board[row][col], end = '  ')                              #So print the regular amount of spaces
+        print(' ')                                                              #print " " for the code to recognize the ending
+
+main()                                                                          #Main baby
     
 
 #________Tentative Algorithm__For Reg____________________
