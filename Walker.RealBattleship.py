@@ -20,7 +20,7 @@ def main():
     Description:
         Determines whether the user wants to play with one player or two players
     '''
-    answer = input("would you like to play with one or two players?")
+    answer = input("Would you like to play with one or two players?")
     if "1" in answer or "one" in answer:
         oneplayer()
     elif "2" in answer or "two" in answer: 
@@ -346,88 +346,4 @@ def printboard(board):
                 print(board[row][col], end = '  ')                              #So print the regular amount of spaces
         print(' ')                                                              #print " " for the code to recognize the ending
 
-main()                                                                          #Main baby
-    
-
-#________Tentative Algorithm__For Reg____________________
-
-#Main
-    #Create 5x5 board
-    #Place 4 dots randomly throughout
-    #send board to telling the user
-
-#Telling the user
-    #Show the user what the board looks like
-    #Tell the user how many turns they have left (starting wiht 10)
-    #Send to user takes a turn
-
-#User takes a turn
-    #Get user coordinates   
-    #Determine if coordinates are valid
-        #Is a spot on the board
-        #Is not taken by a guess already
-        #Make this it's own function???
-    #Determine if they are a hit/miss
-        #if hit, replace with X
-            #win counter adds one
-            #if win counter == 4, user wins
-            #turns remaining goes down by one
-            #is turns remaining == 0, user loses
-        #if miss, replace with O
-            #turns remaining goes down by one
-            #is turns remaining == 0, user loses
-
-#__________TENTATIVE FOR TWO PLAYER_______
-
-#Gameplay: 
-    #PLayer 1 chooses their ship locations
-    #Player 2 chooses their ship locations
-
-    #Player 1 guesses a coordinate on player 2's board
-    #They are told if it is a hit or a miss
-        #Check for win condition
-            #If they have guessed all of the ships
-        #They are told all of their info
-            #Board, moves left, ships left
-
-    #Player 2 guesses a coordinate on player 2's board
-    #They are told if it is a hit or a miss
-        #Check for win condition
-            #If they have guessed all of the ships
-        #They are told all of their info
-            #Board, moves left, ships left
-    
-
-#Code:
-
-    #Creation():
-        #Create boards
-            #1databoard, 1showboard, 2databoard, 2showboard
-        #Create counters   
-            #1wincounter, 2wincounter
-
-        #Tell player 1 to input the coordinates of where they want their 5 ships
-        #Set 1databoard with all of their ships
-        
-        #Tell player 2 to input the coordinates of where they want their 5 ships
-        #Set 2databoard with all of their ships
-
-        #Send to next function
-    #2pmoves():
-        #Show player 1 their 1showboard
-        #Ask player 1 for their guess coordinates
-        #Verify to check if they are valid
-        #See if it is hit or miss and tell them
-        #Check if they have won
-        #Show them their board
-        #Tell them their info
-            #turns remaining, ships remaining
-        
-        #Show player 2 their 2showboard
-        #Ask player 2 for their guess coordinates
-        #Verify to check if they are valid
-        #See if it is hit or miss and tell them
-        #Check if they have won
-        #Show them their board
-        #Tell them their info
-            #turns remaining, ships remaining
+main()                                                                          #Main
