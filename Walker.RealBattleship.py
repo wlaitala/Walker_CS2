@@ -5,8 +5,6 @@ Updated: 12/26/2022
 
 Description: Battleship on a budget
 Bugs: Sometimes there will be only three ships, presumably because the randints are assigning two ships to the same space
-      Maybe let the users pick their spots in 2 player game?
-      Needs mad documentation
 '''
 
 def main():
@@ -31,8 +29,6 @@ def main():
 def oneplayer():
     '''
     Arguments:
-        databoard: The board where the data is placed and help
-        showboard: The board that is shown to the user
     Takes:
         Nothing
     Returns:
@@ -225,9 +221,7 @@ def turns2(databoard1, databoard2, showboard1, showboard2, wincounter1, wincount
     '''
     import winsound
 
-    print("PLAYER 1'S TURN")
-
-    print("Here is what your guessboard looks like: ")          #Showing the user the empty board
+    print("PLAYER 1'S TURN\nHere is what your guessboard looks like: ")          #Showing the user the empty board
 
     printboard(showboard1)                                      #Send to print board function
 
