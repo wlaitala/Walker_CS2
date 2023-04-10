@@ -3,8 +3,6 @@ tuple labs
 '''
 import urllib.request
 
-#with open("tuple_labs_emaildata.txt", "r") as file:
-
 url = "http://www.py4inf.com/code/mbox-short.txt"
 
 file = str((urllib.request.urlopen(url)).read())
@@ -24,15 +22,14 @@ def main():
 def frequency():
     d = dict()
     lines = file.split("\n")
-    for i in lines:
-        words = str(lines).split(" ")
-        for number in range(0,len(words)):
-            if "From" in words[number]:
-                address = words[number + 1].strip("\\nSubject:")
-                if address not in d:
-                    d[address] = 1
-                else:
-                    d[address] = d[address] + 1
+    words = str(lines).split(" ")
+    for number in range(0,len(words)):
+        if "From" in words[number]:
+            address = words[number + 1].strip("\\nSubject:")
+            if address not in d:
+                d[address] = 1
+            else:
+                d[address] = d[address] + 1
     inv_map = {}
     for k, v in d.items():
         inv_map[v] = inv_map.get(v, []) + [k]

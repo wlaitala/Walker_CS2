@@ -1,27 +1,6 @@
-Letter, Freq
-'a', 5223
-'b', 1135
-'c', 3088
-'d', 2004
-'e', 5436
-'f', 1257
-'g', 1027
-'h', 1392
-'i', 4494
-'j', 959
-'k', 1167
-'l', 1832
-'m', 2436
-'n', 4485
-'o', 4174
-'p', 2497
-'q', 57
-'r', 4064
-'s', 3738
-'t', 4486
-'u', 3123
-'v', 997
-'w', 586
-'x', 482
-'y', 643
-'z', 78
+Count, Email
+2, 'wagnermr@iupui.ed', 'antranig@caret.cam.ac.uk', 'gopal.ramasammycook@gmail.com', 'ray@media.berkeley.ed'
+4, 'stephen.marquard@uct.ac.za', 'rjlowe@iupui.ed'
+6, 'louis@media.berkeley.ed', 'gsilver@umich.ed'
+8, 'zqian@umich.ed', 'david.horwitz@uct.ac.za'
+10, 'wen@iupui.ed'
