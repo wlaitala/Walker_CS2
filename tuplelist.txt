@@ -1,6 +1,19 @@
-Count, Email
-2, 'wagnermr@iupui.ed', 'antranig@caret.cam.ac.uk', 'gopal.ramasammycook@gmail.com', 'ray@media.berkeley.ed'
-4, 'stephen.marquard@uct.ac.za', 'rjlowe@iupui.ed'
-6, 'louis@media.berkeley.ed', 'gsilver@umich.ed'
-8, 'zqian@umich.ed', 'david.horwitz@uct.ac.za'
-10, 'wen@iupui.ed'
+Time, Freq
+'00', 1
+'04', 24
+'06', 8
+'07', 8
+'09', 19
+'10', 24
+'11', 49
+'12', 1
+'14', 10
+'15', 19
+'16', 38
+'17', 16
+'18', 8
+'19', 9
+'20', 56
+'21', 4
+'22', 2
+'23', 1
